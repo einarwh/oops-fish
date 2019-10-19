@@ -5,6 +5,14 @@ namespace Oops.Tests
     public class VectorTests
     {
         [Fact]
+        public void Vector_ValueEquality()
+        {
+            var v1 = new Vector(3, 7);
+            var v2 = new Vector(3, 7);
+            Assert.Equal(v1, v2);
+        }
+
+        [Fact]
         public void AddVectors_AddingNullVector()
         {
             var v = new Vector(1, 2);
