@@ -1,4 +1,6 @@
-﻿namespace Oops
+﻿using System.Collections.Generic;
+
+namespace Oops
 {
     internal class CornerPicture : Picture
     {
@@ -17,10 +19,9 @@
             return new QuartetPicture(c, s, s.Turn(), u);
         }
 
-        public override void Render(Box box)
+        public override IReadOnlyList<IShape> Render(Box box)
         {
-            _picture.Render(box);
+            return _picture.Render(box);
         }
-
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Oops
+﻿using System.Collections.Generic;
+
+namespace Oops
 {
     internal class UtilePicture : Picture
     {
@@ -13,9 +15,9 @@
             _utile = n.Over(w).Over(s).Over(e);
         }
 
-        public override void Render(Box box)
+        public override IReadOnlyList<IShape> Render(Box box)
         {
-            _utile.Render(box);
+            return _utile.Render(box);
         }
     }
 }

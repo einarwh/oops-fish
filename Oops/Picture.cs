@@ -1,8 +1,10 @@
-﻿namespace Oops
+﻿using System.Collections.Generic;
+
+namespace Oops
 {
     internal abstract class Picture
     {
-        public abstract void Render(Box box);
+        public abstract IReadOnlyList<IShape> Render(Box box);
 
         public Picture Turn()
         {

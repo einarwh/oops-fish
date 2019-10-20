@@ -1,4 +1,6 @@
-﻿namespace Oops
+﻿using System.Collections.Generic;
+
+namespace Oops
 {
     internal class SquareLimitPicture : Picture
     {
@@ -18,9 +20,9 @@
             _picture = new NonetPicture(nw, nm, ne, mw, mm, me, sw, sm, se);
         }
 
-        public override void Render(Box box)
+        public override IReadOnlyList<IShape> Render(Box box)
         {
-            _picture.Render(box);
+            return _picture.Render(box);
         }
     }
 }

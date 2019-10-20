@@ -28,6 +28,11 @@ namespace Oops
             return new Point(_x + v.X(), _y + v.Y());
         }
 
+        public Point Transpose(Box box)
+        {
+            return new Point(0, 0) + box.A() + _x * box.B() + _y * box.C();
+        }
+
         public static Point operator +(Point p, Vector v)
         {
             return p.Displace(v);

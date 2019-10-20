@@ -15,6 +15,21 @@ namespace Oops
             _c = c;
         }
 
+        public Vector A()
+        {
+            return _a;
+        }
+
+        public Vector B()
+        {
+            return _b;
+        }
+
+        public Vector C()
+        {
+            return _c;
+        }
+
         public Box Turn()
         {
             return new Box(_a.Add(_b), _c, _b.Negate());

@@ -1,4 +1,7 @@
-﻿namespace Oops
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Oops
 {
     internal class BesidePicture : Picture
     {
@@ -16,11 +19,12 @@
         public BesidePicture(Picture leftPicture, Picture rightPicture)
             : this(leftPicture, rightPicture, 1, 1) { }
 
-        public override void Render(Box box)
+        public override IReadOnlyList<IShape> Render(Box box)
         {
             var (leftBox, rightBox) = box.SplitHorizontally(_leftFraction);
-            _leftPicture.Render(leftBox);
-            _rightPicture.Render(rightBox);
+            var shapes1 = _leftPicture.Render(leftBox);
+            var shapes2 = _rightPicture.Render(rightBox);
+            return shapes1.Concat(shapes2).ToList();
         }
     }
 }

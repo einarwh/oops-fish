@@ -1,9 +1,12 @@
-﻿namespace Oops
+﻿using System.Collections.Generic;
+
+namespace Oops
 {
     internal class BlankPicture : Picture
     {
-        public override void Render(Box box)
+        public override IReadOnlyList<IShape> Render(Box box)
         {
+            return new List<IShape>();
         }
     }
 }

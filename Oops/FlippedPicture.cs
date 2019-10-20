@@ -1,4 +1,6 @@
-﻿namespace Oops
+﻿using System.Collections.Generic;
+
+namespace Oops
 {
     internal class FlippedPicture : Picture
     {
@@ -9,9 +11,9 @@
             _picture = picture;
         }
 
-        public override void Render(Box box)
+        public override IReadOnlyList<IShape> Render(Box box)
         {
-            _picture.Render(box.Flip());
+            return _picture.Render(box.Flip());
         }
     }
 }

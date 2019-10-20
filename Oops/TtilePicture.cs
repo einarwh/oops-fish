@@ -1,4 +1,6 @@
-﻿namespace Oops
+﻿using System.Collections.Generic;
+
+namespace Oops
 {
     internal class TtilePicture : Picture
     {
@@ -11,9 +13,9 @@
             _ttile = p.Over(n).Over(e);
         }
 
-        public override void Render(Box box)
+        public override IReadOnlyList<IShape> Render(Box box)
         {
-            _ttile.Render(box);
+            return _ttile.Render(box);
         }
     }
 }

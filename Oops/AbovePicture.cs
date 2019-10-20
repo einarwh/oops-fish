@@ -1,4 +1,7 @@
-﻿namespace Oops
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Oops
 {
     internal class AbovePicture : Picture
     {
@@ -16,11 +19,12 @@
         public AbovePicture(Picture topPicture, Picture bottomPicture) 
             : this(topPicture, bottomPicture, 1, 1) { }
 
-        public override void Render(Box box)
+        public override IReadOnlyList<IShape> Render(Box box)
         {
             var (topBox, bottomBox) = box.SplitVertically(_topFraction);
-            _topPicture.Render(topBox);
-            _bottomPicture.Render(bottomBox);
+            var shapes1 = _topPicture.Render(topBox);
+            var shapes2 = _bottomPicture.Render(bottomBox);
+            return shapes1.Concat(shapes2).ToList();
         }
     }
 }

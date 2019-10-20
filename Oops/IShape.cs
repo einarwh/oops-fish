@@ -1,4 +1,7 @@
 ﻿namespace Oops
 {
-    public interface IShape { }
+    public interface IShape
+    {
+        IShape Transpose(Box box);
+    }
 }

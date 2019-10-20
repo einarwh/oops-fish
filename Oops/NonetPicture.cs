@@ -1,4 +1,6 @@
-﻿namespace Oops
+﻿using System.Collections.Generic;
+
+namespace Oops
 {
     internal class NonetPicture : Picture
     {
@@ -12,9 +14,9 @@
                 new RowPicture(sw, sm, se));
         }
 
-        public override void Render(Box box)
+        public override IReadOnlyList<IShape> Render(Box box)
         {
-            _nonet.Render(box);
+            return _nonet.Render(box);
         }
 
         private class RowPicture : Picture
@@ -26,9 +28,9 @@
                 _row = new BesidePicture(w, new BesidePicture(m, e), 1, 2);
             }
 
-            public override void Render(Box box)
+            public override IReadOnlyList<IShape> Render(Box box)
             {
-                _row.Render(box);
+                return _row.Render(box);
             }
         }
 
@@ -40,10 +42,10 @@
             {
                 _column = new AbovePicture(n, new AbovePicture(m, s), 1, 2);
             }
-
-            public override void Render(Box box)
+            
+            public override IReadOnlyList<IShape> Render(Box box)
             {
-                _column.Render(box);
+                return _column.Render(box);
             }
         }
     }

@@ -1,4 +1,7 @@
-﻿namespace Oops
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Oops
 {
     internal class OverPicture : Picture
     {
@@ -11,10 +14,11 @@
             _p2 = p2;
         }
 
-        public override void Render(Box box)
+        public override IReadOnlyList<IShape> Render(Box box)
         {
-            _p1.Render(box);
-            _p2.Render(box);
+            var shapes1 = _p1.Render(box);
+            var shapes2 = _p2.Render(box);
+            return shapes1.Concat(shapes2).ToList();
         }
     }
 }

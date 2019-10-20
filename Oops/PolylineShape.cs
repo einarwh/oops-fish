@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Oops
 {
@@ -9,6 +10,11 @@ namespace Oops
         public PolylineShape(IReadOnlyList<Point> points)
         {
             _points = points;
+        }
+
+        public IShape Transpose(Box box)
+        {
+            return new PolylineShape(_points.Select(it => it.Transpose(box)).ToList());
         }
     }
 }
