@@ -1,6 +1,6 @@
 ﻿namespace Oops
 {
-    internal static class PictureExtensions
+    public static class PictureExtensions
     {
         public static Picture Turn(this Picture p)
         {

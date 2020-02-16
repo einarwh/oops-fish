@@ -3,7 +3,7 @@ using Oops.Shapes;
 
 namespace Oops.Figures
 {
-    internal class FishPicture : FigurePicture
+    public class FishPicture : FigurePicture
     {
         public FishPicture() : base(Shapes) {}
 

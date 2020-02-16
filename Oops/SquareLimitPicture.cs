@@ -3,7 +3,7 @@ using Oops.Shapes;
 
 namespace Oops
 {
-    internal class SquareLimitPicture : Picture
+    public class SquareLimitPicture : Picture
     {
         private readonly NonetPicture _picture;
 

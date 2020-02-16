@@ -4,7 +4,7 @@ using Oops.Shapes;
 
 namespace Oops
 {
-    internal class OverPicture : Picture
+    public class OverPicture : Picture
     {
         private readonly Picture _p1;
         private readonly Picture _p2;

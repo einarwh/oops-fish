@@ -2,8 +2,9 @@
 using System.Linq;
 using Oops.Figures;
 using Oops.Svg;
+using Oops;
 
-namespace Oops
+namespace Oops.Runner
 {
     class Program
     {

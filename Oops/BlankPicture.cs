@@ -3,7 +3,7 @@ using Oops.Shapes;
 
 namespace Oops
 {
-    internal class BlankPicture : Picture
+    public class BlankPicture : Picture
     {
         public override IReadOnlyList<IShape> Render(Box box)
         {

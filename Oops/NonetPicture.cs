@@ -3,7 +3,7 @@ using Oops.Shapes;
 
 namespace Oops
 {
-    internal class NonetPicture : Picture
+    public class NonetPicture : Picture
     {
         private readonly Picture _nonet;
 
