@@ -3,9 +3,9 @@ using Oops.Shapes;
 
 namespace Oops.Figures
 {
-    public class HPicture : FigurePicture
+    public class EPicture : FigurePicture
     {
-        public HPicture() : base(Shapes) { }
+        public EPicture() : base(Shapes) { }
 
         private static IReadOnlyList<IShape> Shapes
         {
@@ -14,16 +14,16 @@ namespace Oops.Figures
                 var points = new List<Point>
                 {
                     new Point(0.30, 0.20),
-                    new Point(0.40, 0.20),
+                    new Point(0.70, 0.20),
+                    new Point(0.70, 0.30),
+                    new Point(0.40, 0.30),
                     new Point(0.40, 0.45),
                     new Point(0.60, 0.45),
-                    new Point(0.60, 0.20),
-                    new Point(0.70, 0.20),
-                    new Point(0.70, 0.80),
-                    new Point(0.60, 0.80),
                     new Point(0.60, 0.55),
                     new Point(0.40, 0.55),
-                    new Point(0.40, 0.80),
+                    new Point(0.40, 0.70),
+                    new Point(0.70, 0.70),
+                    new Point(0.70, 0.80),
                     new Point(0.30, 0.80)
                 };
 
