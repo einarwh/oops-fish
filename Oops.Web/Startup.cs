@@ -37,12 +37,16 @@ namespace Oops.Web
                 endpoints.MapGet("/fish/side/{n}", FishRequestHandler.GetSide);
                 endpoints.MapGet("/fish/corner/{n}", FishRequestHandler.GetCorner);
                 endpoints.MapGet("/fish/squarelimit/{n}", FishRequestHandler.GetSquareLimit);
+                
                 endpoints.MapGet("/george", GeorgeRequestHandler.GetGeorge);
                 endpoints.MapGet("/george/iv", GeorgeRequestHandler.GetGeorgeIV);
                 endpoints.MapGet("/george/iv/pattern/{n}", GeorgeRequestHandler.GetGeorgeIVPattern);
                 endpoints.MapGet("/george/hifive", GeorgeRequestHandler.GetHiFive);
                 endpoints.MapGet("/george/hifive/{n}", GeorgeRequestHandler.GetHiFiveRibbon);
                 endpoints.MapGet("/george/reflection", GeorgeRequestHandler.GetReflection);
+
+                endpoints.MapGet("/letter/f", LetterRequestHandler.GetF);
+                endpoints.MapGet("/letter/h", LetterRequestHandler.GetH);
             });
         }
     }
