@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Oops.Shapes;
 
 namespace Oops
 {
@@ -8,7 +9,9 @@ namespace Oops
 
         public CornerPicture(int n, Picture p)
         {
-            _picture = n == 0 ? new BlankPicture() : CreateQuartet(n, p);
+            _picture = n == 0 
+                ? new BlankPicture() 
+                : CreateQuartet(n, p);
         }
 
         private static Picture CreateQuartet(int n, Picture p)

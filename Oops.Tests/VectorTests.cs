@@ -68,7 +68,6 @@ namespace Oops.Tests
         [Fact]
         public void SubtractVectors_SubtractingVectorFromItselfYieldsNullVector()
         {
-            var nv = new Vector(0, 0);
             var v = new Vector(1, 3);
             Assert.Equal(new Vector(0, 0), v - v);
         }

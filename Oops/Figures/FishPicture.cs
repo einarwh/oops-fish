@@ -1,10 +1,15 @@
 ﻿using System.Collections.Generic;
+using Oops.Shapes;
 
-namespace Oops
+namespace Oops.Figures
 {
-    public class LetterF : IFigure
+    internal class FishPicture : FigurePicture
     {
-        public IReadOnlyList<IShape> Shapes
+        public FishPicture() : base(Shapes)
+        {
+        }
+
+        private static IReadOnlyList<IShape> Shapes
         {
             get
             {
@@ -23,7 +28,7 @@ namespace Oops
                 };
 
                 var polyline = new PolylineShape(points);
-               
+
                 var list = new List<IShape>
                 {
                     polyline
@@ -31,5 +36,6 @@ namespace Oops
                 return list;
             }
         }
+
     }
 }

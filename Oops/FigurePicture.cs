@@ -1,20 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Oops.Shapes;
 
 namespace Oops
 {
-    internal class FigurePicture : Picture
+    internal abstract class FigurePicture : Picture
     {
-        private readonly IFigure _figure;
+        private readonly IReadOnlyList<IShape> _shapes;
 
-        public FigurePicture(IFigure figure)
+        protected FigurePicture(IReadOnlyList<IShape> shapes)
         {
-            _figure = figure;
+            _shapes = shapes;
         }
 
         public override IReadOnlyList<IShape> Render(Box box)
         {
-            return _figure.Shapes.Select(it => it.Transpose(box)).ToList();
+            return _shapes.Select(it => it.Transpose(box)).ToList();
         }
     }
 }
