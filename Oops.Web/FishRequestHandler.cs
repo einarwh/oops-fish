@@ -29,7 +29,7 @@ namespace Oops.Web
 
         public static Task GetSide(HttpContext context)
         {
-            var depthRouteValue = (string)context.GetRouteValue("depth");
+            var depthRouteValue = (string)context.GetRouteValue("n");
             var depth = int.Parse(depthRouteValue);
 
             var fish = new FishPicture();
@@ -39,7 +39,7 @@ namespace Oops.Web
 
         public static Task GetCorner(HttpContext context)
         {
-            var depthRouteValue = (string)context.GetRouteValue("depth");
+            var depthRouteValue = (string)context.GetRouteValue("n");
             var depth = int.Parse(depthRouteValue);
 
             var fish = new FishPicture();
@@ -49,7 +49,7 @@ namespace Oops.Web
 
         public static Task GetSquareLimit(HttpContext context)
         {
-            var depthRouteValue = (string) context.GetRouteValue("depth");
+            var depthRouteValue = (string) context.GetRouteValue("n");
             var depth = int.Parse(depthRouteValue);
 
             var fish = new FishPicture();
