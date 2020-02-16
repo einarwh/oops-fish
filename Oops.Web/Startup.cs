@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -40,8 +37,10 @@ namespace Oops.Web
                 endpoints.MapGet("/fish/side/{depth}", FishRequestHandler.GetSide);
                 endpoints.MapGet("/fish/corner/{depth}", FishRequestHandler.GetCorner);
                 endpoints.MapGet("/fish/squarelimit/{depth}", FishRequestHandler.GetSquareLimit);
-                endpoints.MapGet("/george/iv", GeorgeRequestHandler.GetGeorgeIV);
                 endpoints.MapGet("/george", GeorgeRequestHandler.GetGeorge);
+                endpoints.MapGet("/george/iv", GeorgeRequestHandler.GetGeorgeIV);
+                endpoints.MapGet("/george/hifive", GeorgeRequestHandler.GetHiFive);
+                endpoints.MapGet("/george/reflection", GeorgeRequestHandler.GetReflection);
             });
         }
     }
