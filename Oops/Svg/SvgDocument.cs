@@ -25,7 +25,9 @@ namespace Oops.Svg
                 string.Join(Environment.NewLine, 
                     _elements.Select(it => it.ToString()));
 
-            var result = $"<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" version=\"1.2\" height=\"{_height}\" width=\"{_width}\">{Environment.NewLine}{els}{Environment.NewLine}</svg>";
+            var transformStart = $"<g transform=\"matrix(1 0 0 -1 0 {_height})\">";
+            var transformEnd = "</g>";
+            var result = $"<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" version=\"1.2\" height=\"{_height}\" width=\"{_width}\">{Environment.NewLine}{transformStart}{Environment.NewLine}{els}{Environment.NewLine}{transformEnd}{Environment.NewLine}</svg>";
 
             return result;
         }

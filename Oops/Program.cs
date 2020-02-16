@@ -11,9 +11,9 @@ namespace Oops
         {
             Console.WriteLine("Hello World!");
             var b = new Box(
-                new Vector(50, 50),
-                new Vector(300, 0),
-                new Vector(0, 300));
+                new Vector(200, 100),
+                new Vector(400, 0),
+                new Vector(0, 400));
             var g = new GeorgePicture();
             var f = new FPicture();
             var gtt = g.Turn().Turn();
@@ -24,15 +24,16 @@ namespace Oops
                 .Select(it => it.ToSvgElement())
                 .ToList();
 
-            var doc = new SvgDocument(400, 400, elements);
-            var str = doc.ToString();
-
             var giv = new QuartetPicture(g,
                 g.Flip().Turn().Turn(),
                 g.Turn().Turn(),
                 g.Flip());
 
-            var sql = new SquareLimitPicture(5, new FishPicture());
+            var sql = new FishPicture();
+            var sqlDoc = new SvgDocument(600, 800, sql.Render(b).Select(it => it.ToSvgElement()).ToList());
+
+            var ssql = sqlDoc.ToString();
+            var s = ssql;
         }
     }
 }

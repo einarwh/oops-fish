@@ -11,7 +11,7 @@
 
         public override string ToString()
         {
-            return $"M {_point}";
+            return $"M {_point.ToString(" ")}";
         }
     }
 }

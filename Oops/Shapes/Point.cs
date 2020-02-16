@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Oops
+namespace Oops.Shapes
 {
     public class Point : IEquatable<Point>
     {

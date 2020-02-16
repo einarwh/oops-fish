@@ -17,7 +17,7 @@
 
         public override string ToString()
         {
-            return $"C {_controlPoint1}, {_controlPoint2}, {_endPoint}";
+            return $"C {_controlPoint1.ToString(" ")}, {_controlPoint2.ToString(" ")}, {_endPoint.ToString(" ")}";
         }
     }
 }
