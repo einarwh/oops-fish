@@ -14,7 +14,7 @@ namespace Oops
 
         public override IReadOnlyList<IShape> Render(Box box)
         {
-            return _picture.Render(box.Turn());
+            return _picture.Render(box.Toss());
         }
     }
 }

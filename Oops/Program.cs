@@ -29,7 +29,7 @@ namespace Oops
                 g.Turn().Turn(),
                 g.Flip());
 
-            var sql = new FishPicture();
+            var sql = new SquareLimitPicture(4, new FishPicture());
             var sqlDoc = new SvgDocument(600, 800, sql.Render(b).Select(it => it.ToSvgElement()).ToList());
 
             var ssql = sqlDoc.ToString();
