@@ -9,7 +9,7 @@ namespace Oops
 
         public SidePicture(int n, Picture p)
         {
-            _picture = n == 0 ? new BlankPicture() : CreateQuartet(n, p);
+            _picture = n < 1 ? new BlankPicture() : CreateQuartet(n, p);
         }
 
         private static Picture CreateQuartet(int n, Picture p)

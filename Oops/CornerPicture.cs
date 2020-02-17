@@ -9,7 +9,7 @@ namespace Oops
 
         public CornerPicture(int n, Picture p)
         {
-            _picture = n == 0 
+            _picture = n < 1 
                 ? new BlankPicture() 
                 : CreateQuartet(n, p);
         }

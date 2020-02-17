@@ -47,7 +47,17 @@ namespace Oops.Web
             return SvgRequestHandler.GetSvg(context, new OPicture());
         }
 
-        public static Task GetName(HttpContext context)
+        public static Task GetA(HttpContext context)
+        {
+            return SvgRequestHandler.GetSvg(context, new APicture());
+        }
+
+        public static Task GetI(HttpContext context)
+        {
+            return SvgRequestHandler.GetSvg(context, new IPicture());
+        }
+
+        public static Task GetHenderson(HttpContext context)
         {
             var name = new NonetPicture(
                 new HPicture(), 
@@ -63,18 +73,50 @@ namespace Oops.Web
             return SvgRequestHandler.GetSvg(context, name);
         }
 
-        public static Task GetNameZoom(HttpContext context)
+        public static Task GetHendersonZoom(HttpContext context)
         {
             var depthRouteValue = (string)context.GetRouteValue("n");
             var depth = int.Parse(depthRouteValue);
 
-            Picture p = new BlankPicture();
+            Picture p = new EPicture();
             for (int i = 0; i < depth; i++)
             {
                 p = new ZoomPicture(p);
             }
 
             return SvgRequestHandler.GetSvg(context, p);
+        }
+
+        public static Task GetAstrid(HttpContext context)
+        {
+            var name = new NonetPicture(
+                new APicture(), 
+                new SPicture(), 
+                new TPicture(), 
+                new RPicture(), 
+                new IPicture(), 
+                new DPicture(), 
+                new BlankPicture(), 
+                new BlankPicture(), 
+                new BlankPicture());
+
+            return SvgRequestHandler.GetSvg(context, name);
+        }
+
+        public static Task GetAstri(HttpContext context)
+        {
+            var name = new NonetPicture(
+                new APicture(), 
+                new SPicture(), 
+                new TPicture(), 
+                new RPicture(), 
+                new IPicture(), 
+                new RPicture().Turn().Turn(), 
+                new TPicture().Turn().Turn(), 
+                new SPicture().Turn().Turn(), 
+                new APicture().Turn().Turn());
+
+            return SvgRequestHandler.GetSvg(context, name);
         }
 
         private class ZoomPicture : NonetPicture

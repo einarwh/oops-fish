@@ -53,9 +53,15 @@ namespace Oops.Web
                 endpoints.MapGet("/letter/r", LetterRequestHandler.GetR);
                 endpoints.MapGet("/letter/s", LetterRequestHandler.GetS);
                 endpoints.MapGet("/letter/o", LetterRequestHandler.GetO);
+                endpoints.MapGet("/letter/a", LetterRequestHandler.GetA);
+                endpoints.MapGet("/letter/i", LetterRequestHandler.GetI);
 
-                endpoints.MapGet("/henderson", LetterRequestHandler.GetName);
-                endpoints.MapGet("/henderson/zoom/{n}", LetterRequestHandler.GetNameZoom);
+                endpoints.MapGet("/henderson", LetterRequestHandler.GetHenderson);
+                endpoints.MapGet("/henderson/zoom/{n}", LetterRequestHandler.GetHendersonZoom);
+
+                endpoints.MapGet("/astrid", LetterRequestHandler.GetAstrid);
+
+                endpoints.MapGet("/astri", LetterRequestHandler.GetAstri);
             });
         }
     }
